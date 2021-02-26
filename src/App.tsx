@@ -89,7 +89,7 @@ const Passport: FC<{ passportEntry: PassportEntry }> = ({ passportEntry }) => {
   );
 };
 
-const VerificationPairRE = /^v\/([a-z0-9]{10,})\/([a-z0-9]{10,})$/i;
+const VerificationPairRE = /^v\/([a-z0-9]{10,})\/([a-z0-9-_]{10,})$/i;
 
 const getVerificationPair = (path: string): VerificationPair | null => {
   const match = VerificationPairRE.exec(path);

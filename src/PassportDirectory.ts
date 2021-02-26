@@ -7,10 +7,9 @@ type PassportDirectory = {
   [vaccine: string]: { [passportId: string]: number };
 };
 
-const parseKey = (k: Key) => k.match(/../g)!.join("/");
+const parseKey = (k: Key) => k.match(/..?/g)!.join("/");
 
-const root = "https://d-test.vaxassure.me";
-// const root = "https://vaxassure-test-data.s3.amazonaws.com";
+const root = "https://d.vaxassure.me";
 
 const passportFileURL = (vp: VerificationPair, name: string) =>
   `${root}/${parseKey(vp.id)}/${name}`;
